@@ -1,18 +1,40 @@
 body{
-
+/* 
    
     background-image: url(../profileImg/background.jpg);
     background-repeat: no-repeat;
-    background-size: cover ;
-
+    background-size: cover ; */
+    height: 94vh;
     
 }
 .container {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
+/* Header */
+.header {
+    background-color: rgba(48, 48, 48, 0.973);
+}
+.topnav{display:block; position:relative; width: 50%; margin:0 auto; padding:0 0 150px 0; text-align:center;}
+.topnav ul, #topnav li{margin:0; padding:0; list-style:none;}
+.topnav li{display:inline; margin-right:3px;}
+.topnav li a{text-decoration:none;display:inline-block; height:45px; padding-left:14px; text-transform:uppercase; color:#EBEBEC; background:url("images/topnav_left.gif") top left no-repeat transparent;}
+.topnav li a strong{padding:12px 14px 12px 0; line-height:40px; white-space:nowrap; font-weight:normal; background:url("images/topnav_right.gif") top right no-repeat;}
+.topnav li a:hover, #topnav li.active a{background-position:0 -40px;}
+.topnav li a:hover strong, #topnav li.active a strong{background-position:right -40px;}
+.topnav li.last{margin:0;}
+
+.header2 {
+    background-color: rgba(48, 48, 48, 0.822);
+}
+/* End of Header */
+/* BODY HOME */
+
+/* End of Body Home */
+/* SIGN UP AND LOGIN */
 .card-container.card {
     max-width: 400px;
     padding: 40px 40px;
+    background-color:rgba(11, 182, 255, 0.575);
 }
 
 .btn {
@@ -28,7 +50,7 @@ body{
  * Card component
  */
 .card {
-    background-color: #F7F7F7;
+    /* background-color: rgb(11, 182, 255); */
     /* just in case there no content*/
     padding: 20px 25px 30px;
     margin: 0 auto 25px;
@@ -109,7 +131,7 @@ body{
 
 .btn.btn-signin {
     /*background-color: #4d90fe; */
-    background-color: rgb(104, 145, 162);
+    background-color: rgb(11, 182, 255);
     /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
     padding: 0px;
     font-weight: 700;
@@ -132,11 +154,17 @@ body{
 }
 
 .forgot-password {
-    color: rgb(104, 145, 162);
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 8px;
+    color: black;
 }
 
 .forgot-password:hover,
 .forgot-password:active,
 .forgot-password:focus{
-    color: rgb(12, 97, 33);
+    background-color: rgba(12, 218, 208, 0.644);
+    text-decoration: none;
+    color: rgb(255, 255, 255);
 }
+
