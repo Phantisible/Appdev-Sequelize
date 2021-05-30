@@ -10,6 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- End of BOOTSTRAP 4 -->
 
   <!-- CSS FONTS -->
@@ -33,31 +34,45 @@
   <!-- ####################################################################################################### -->
   <div class="header2">
     <div class="container">
-      <div class="fl_left">
-        <h1><a href="index.html">Forum</a></h1>
+      <img class="logo"src="profileImg/Forum_logo.png">
+      <div class="float-left">
+        
+        <span><h1>Forum</h1></span>
         <p>Discuss the things you want to say or ask</p>
       </div>
-      <div class="fl_right">
+      <!-- <div class="clear"></div> -->
+      <div class="float-right">
         <form action="#" method="post" id="sitesearch">
-          <fieldset>
+          <!-- <fieldset>
             
             <input type="text" />
-            <input type="image" src="css/images/search.gif" id="search" alt="Search" />
-          </fieldset>
+            <button type="submit">
+              SEARCH
+            </button>
+          </fieldset> -->
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search this blog">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
         </form>
         <p>
-          <a href="#">A - Z Index</a>
+          <a href="#">A - Z Index</a> &nbsp;
           
           <% if(check == 1){ %>
                |  <span>Welcome, <%-user.username%>!</span>
-                  <span><img href="/profileImg/default.png"></span>                   
+              <span><img class="profile-img" src="profileImg/default.png"></span>             
                |  <a href="/logout">Logout</a>
           <% } else {%>
-               | <a  href="/login" >Login</a>
+               | &nbsp;&nbsp;<a  href="/login" >Login</a>
           <% } %>  
           
         </p>
       </div>
+      <div class="clear"></div>
     </div>
   </div>
 

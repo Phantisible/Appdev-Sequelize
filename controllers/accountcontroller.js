@@ -1,4 +1,5 @@
 const account = require("../models/accounts");
+const threads = require("../models/threads");
 const bcrypt = require('bcrypt');
 
 
@@ -12,13 +13,18 @@ generateCode = () => {
     return generate;
 }  
 
-exports.index = (req,res) => {
+exports.index = async (req,res) => {
     res.locals.user = req.session.user;
-    res.render("home", {check : 0});
+    let thread_data = await threads.model.findAll();
+    res.render("home", {check : 0 , threadlist : thread_data});
 }
-exports.home = (req,res) => {
+exports.home = async (req,res) => {
     res.locals.user = req.session.user;
-    res.render("home", {check : 1});
+    let thread_data = await threads.model.findAll();
+    if(req.session.user.uuid === req.session.threaduuid){
+        res.sent("hellow");
+    }
+    res.render("home", {check : 1 , threadlist : thread_data});
 }
 
 exports.getslogin = (req,res) => {
@@ -45,6 +51,7 @@ exports.signup = async (req,res) => {
 
 
 exports.login = async (req, res) => {
+    let thread_data = await threads.model.findAll();
     let data = await account.model.findOne({where: {username: req.body.username}});
     
     if (data != null){
@@ -60,10 +67,17 @@ exports.login = async (req, res) => {
                 // res.render("home", {user : data , check : 1});
                 res.redirect("/home");
             }else{
-                res.render("login" , {check : 2});
+                var check = 2;
+                if ("/") {    
+                    res.render("home" , {check : 2, threadlist : thread_data});
+                } else {
+                    res.render("/login" , {check : 2});
+                }
+                
             }
         });
     } else {
-         res.render("login" , {check : 1});  
+        res.send(check);
+         res.render("home" , {check : 1});  
     }
 }

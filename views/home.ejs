@@ -11,12 +11,71 @@
                 <label for="threadTitle">Enter Description</label>
                 <input required type="text" class="form-control"  placeholder="Enter Description" autofocus="" maxlength="200" name="thread_body"/>
             </div>
-        </div>        
-            <button type="submit" class="postbutton">
+        </div>
+            <%if (check == 1){%>        
+              <button type="submit" class="btn btn-primary">
+                  Post
+              </button>  
+            <%} else {%>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postModal">
                 Post
-            </button>       
+                <!-- <a href="/login">Post</a> -->
+              </button>  
+            <%}%>     
     </form>
   </div>
-    
+  <hr>
+  <div class="container">
+    <h1>LIST OF THREADS</h1>
+    <div class="listOfthreads">
+      <% for(x=0; x<threadlist.length; x++){%>
+        <div class="row">
+          <div class="col-sm" style="background-color:yellow;">
+            <h3><strong></strong>  </h3>
+          </div>
+          <div class="col-sm" style="background-color:orange;">
+            <h3><strong> <%-threadlist[x].thread_title%></strong>  </h3>
+          </div>
+          <div class="col-sm" style="background-color:yellow;">25%</div>
+          <div class="col-sm" style="background-color:orange;"><%-threadlist[x].createdAt%></div>
+        </div>
+        <hr>
+      <%}%>  
+    </div> 
+      
+  </div>
+  
 
+
+  <!-- ============================================================================================== -->
+    <!-- The Modal -->
+    <div class="modal" id="postModal" style="color: white;" >
+      <div class="modal-dialog">
+         <div class="modal-content container" style="background-color: rgba(255, 0, 0, 0.507)">
+        
+          <!-- Modal Header -->
+          <div class="modal-header modal_login">
+            <h2><strong>No Account Detected</strong></h2>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="modal-body" id="contentModal">
+            <h4 style="text-align: center;">You must have an account to post a thread</h4>
+          </div>
+          
+          <!-- Modal footer -->
+          <div class="modal-footer" style="color:white;">
+
+              <p class="">Don't have an account?
+              </p>
+              <a class="forgot-password" href="/signup">    
+                 Register here
+              </a>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
 <%- include ('partials/footer.ejs') %>

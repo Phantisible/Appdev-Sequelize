@@ -1,0 +1,18 @@
+@charset "utf-8";
+/*
+Template Name: Educational Theory
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Navigation CSS
+*/
+
+#leftnav{display:block; position:relative; width:960px; margin:0 auto; padding:0 0 30px 0; text-align:center;}
+#leftnav ul, #topnav li{margin:0; padding:0; list-style:none;}
+#leftnav li{display:inline; margin-right:3px;}
+#leftnav li a{display:inline-block; height:40px; padding-left:14px; text-transform:uppercase; color:#EBEBEC; background:url("images/topnav_left.gif") top left no-repeat transparent;}
+#leftnav li a strong{padding:12px 14px 12px 0; line-height:40px; white-space:nowrap; font-weight:normal; background:url("images/topnav_right.gif") top right no-repeat;}
+#leftnav li a:hover, #topnav li.active a{background-position:0 -40px;}
+#leftnav li a:hover strong, #topnav li.active a strong{background-position:right -40px;}
+#leftnav li.last{margin:0;}

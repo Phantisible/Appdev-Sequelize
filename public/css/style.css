@@ -12,9 +12,9 @@ body{
 }
 /* Header */
 .header {
-    background-color: rgba(48, 48, 48, 0.973);
+    background-color: rgba(27,27,27);
 }
-.topnav{display:block; position:relative; width: 50%; margin:0 auto; padding:0 0 150px 0; text-align:center;}
+.topnav{display:block; position:relative; width: 50%; margin:0 auto; padding:0 0 15px 0; text-align:center;}
 .topnav ul, #topnav li{margin:0; padding:0; list-style:none;}
 .topnav li{display:inline; margin-right:3px;}
 .topnav li a{text-decoration:none;display:inline-block; height:45px; padding-left:14px; text-transform:uppercase; color:#EBEBEC; background:url("images/topnav_left.gif") top left no-repeat transparent;}
@@ -24,13 +24,59 @@ body{
 .topnav li.last{margin:0;}
 
 .header2 {
-    background-color: rgba(48, 48, 48, 0.822);
+    background-color: rgba(50, 50, 50);
+    color: white;
+    /* padding: 10px; */
+    z-index: 5;
 }
+.header2 .profile-img {
+    width: 50px;
+    height: 50px;
+}
+.float-left{
+    margin-top: 20px;
+    margin-left: 80px;
+}
+.logo{
+    margin-top: 20px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+}
+.float-right p {
+   padding-top: 20px;
+}
+.float-right form {
+   background-color:rgba(27,27,27);
+   padding: 10px 10px 10px 10px;    
+  
+ }
+
 /* End of Header */
 /* BODY HOME */
-
+.home {
+    margin: 80px;
+    z-index: 10;
+}
+.listOfthreads{
+    width: 60%;
+}
 /* End of Body Home */
+.clear { clear:both}
 /* SIGN UP AND LOGIN */
+.modal {
+    background-color:rgba(128, 128, 128, 0.575);
+}
+.modal_login img{
+    background-color:rgba(128, 128, 128, 0.575);
+    margin-left: 35%;
+}
+.modal-body h2{
+    /* background-color:rgba(128, 128, 128, 0.575); */
+    margin-top: 10px;
+    
+}
+
 .card-container.card {
     max-width: 400px;
     padding: 40px 40px;

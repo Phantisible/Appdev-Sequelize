@@ -1,0 +1,20 @@
+@charset "utf-8";
+/*
+Template Name: Educational Theory
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Forms CSS
+*/
+
+form, fieldset, legend{margin:0; padding:0; border:none;}
+/* legend{display:none;} */
+input, textarea, select{font-size:12px; font-family:Georgia, "Times New Roman", Times, serif;}
+
+/* ----------------------------------------------Search Form------------------------------------- */
+
+#sitesearch{display:block; width:293px; margin:0 0 25px 0; padding:10px 0 15px; background:url("images/search_bg.gif") bottom left no-repeat #4F565B;}
+#sitesearch input{display:block; float:left; width:165px; height:25px; margin:0 10px 0 17px; padding:0 5px 0 10px; color:#E1E1E1; background:url("images/form_input_long.gif") 0 0 no-repeat #5D666C; border:none;}
+#sitesearch input#search{width:70px; height:25px; margin:0; padding:0; cursor:pointer; background:none; float:left;}
+

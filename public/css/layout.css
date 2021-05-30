@@ -1,0 +1,77 @@
+@charset "utf-8";
+/*
+Template Name: Educational Theory
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Layout CSS
+*/
+
+@import url("navi.css");
+@import url("forms.css");
+@import url("tables.css");
+@import url("homepage.css");
+@import url("gallery.css");
+@import url("portfolio.css");
+@import url("featured_slide.css");
+
+html{overflow-y:scroll; }
+body
+{   margin:0; 
+    padding:0; 
+    font-size:13px; 
+    font-family:Georgia, "Times New Roman", Times, serif; 
+    color:#333333; 
+    /* background-color:#C8CCCF; */
+}
+.container 
+{
+    background-color:#C8CCCF;
+}
+.justify{text-align:justify;}
+.bold{font-weight:bold;}
+.center{text-align:center;}
+.right{text-align:right;}
+.nostart{margin:0; padding:0; list-style-type:none;}
+
+.clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
+.clear{display:inline-block;}
+html[xmlns] .clear{display:block;}
+* html .clear{height:1%;}
+
+a{outline:none; text-decoration:none;}
+
+.fl_left, .imgl{float:left;}
+.fl_right, .imgr{float:right;}
+
+img{margin:0; padding:0; border:none;}
+.imgholder, .imgl, .imgr{padding:4px; border:1px solid #D8D8D8; text-align:center;}
+.imgl{margin:0 15px 15px 0; clear:left;}
+.imgr{margin:0 0 15px 15px; clear:right;}
+
+/* ----------------------------------------------Wrapper------------------------------------- */
+
+div.wrapper{display:block; width:100%; text-align:left;}
+div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, div.wrapper h6{margin:0 0 15px 0; padding:0; font-size:16px; font-weight:normal; line-height:normal;}
+.row1{color:#EBECED; background-color:#4F565B;}
+.row2, .row2 a{color:#E1E1E1; background-color:#5D666C;}
+.row3{padding-top:30px; color:#666666; background:url("images/featured_bg.gif") bottom left repeat-x #E0E0E0;}
+.row4{background:url("images/quicknav_bg.gif") top left repeat-x; border-top:1px solid #BCBCBC; border-bottom:1px solid #BCBCBC;}
+.row5{color:#848C92; background-color:#EBEDEE;}
+.row5 a{color:#179CFF; background-color:#EBEDEE;}
+
+/* ----------------------------------------------Generalise------------------------------------- */
+
+#header, #container, #academiclinks, #footer{display:block; position:relative; width:960px; margin:0 auto;}
+
+/* ----------------------------------------------Header------------------------------------- */
+
+#header{padding:0 0 30px 0;}
+#header h1, #header p, #header ul{margin:0; padding:0; list-style:none; line-height:normal;}
+#header h1{font-size:32px; font-variant:small-caps;}
+#header p{font-size:15px;}
+#header .fl_left{margin-top:30px;}
+#header .fl_left p{margin-top:4px;}
+#header .fl_right p{text-align:right;}
+
