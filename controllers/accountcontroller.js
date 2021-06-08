@@ -32,6 +32,7 @@ exports.getslogin = (req,res) => {
 }
 
 exports.getslogout = (req,res) => {
+    req.session.destroy;
     res.redirect("/");
 } 
 exports.getsignup = (req,res) => {

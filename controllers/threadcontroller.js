@@ -25,7 +25,7 @@ exports.addThread = async (req, res) => {
         thread_title : req.body.thread_title,
         thread_body : req.body.thread_body
     })        
-    res.render("home" , {check : 1});
+    res.redirect("/home");
     
 }
 
@@ -40,3 +40,26 @@ exports.updateThread = async (req, res) => {
     res.redirect('/home');
 }
 
+exports.threadtoppost = async (req, res) =>{
+    res.locals.user = req.session.user;
+    if(req.session.user){
+        res.render("toppost", {check: 1});  
+    } else {
+        res.redirect("/login")
+    }
+}
+
+exports.threadrecentpost = async (req, res) =>{
+    res.locals.user = req.session.user;
+    let thread_data = await threads.model.findAll({
+        order: [
+            ['createdAt' , 'DESC']
+        ]
+     });
+    if(req.session.user){
+        res.render("recentpost", {check: 1, threadlist: thread_data});  
+    } else {
+        res.redirect("/login")
+    }
+
+}

@@ -1,6 +1,9 @@
 <%- include ('partials/header.ejs') %>
-  <div class="container">
-    <h1>This is a sample</h1>
+  <div class="container" >
+    <div class="addThread" style="border: 1px solid black; top:5%;">
+
+    
+    <h1 style="text-align: center;">Add a Thread</h1>
     <form method="POST" action="/addThread">
         <div>
             <div class="form-group">
@@ -23,11 +26,31 @@
               </button>  
             <%}%>     
     </form>
+    </div>
   </div>
-  <hr>
+  <!-- <hr> -->
   <div class="container">
     <h1>LIST OF THREADS</h1>
     <div class="listOfthreads">
+      <% for(x=0; x<threadlist.length; x++){%>
+        <div class="row">
+          <div class="col-sm" style="background-color:yellow;">
+            <h3><strong></strong> <%%> </h3>
+          </div>
+          <div class="col-sm" style="background-color:orange;">
+            <h3><strong> <%-threadlist[x].thread_title%></strong>  </h3>
+          </div>
+          <div class="col-sm" style="background-color:yellow;">25%</div>
+          <div class="col-sm" style="background-color:orange;"><%-threadlist[x].createdAt%></div>
+        </div>
+        <hr>
+      <%}%>  
+    </div> 
+      
+  </div>
+  <div class="listOfRecent">
+    <h3>List of Recent Post</h3>
+    
       <% for(x=0; x<threadlist.length; x++){%>
         <div class="row">
           <div class="col-sm" style="background-color:yellow;">
@@ -41,7 +64,7 @@
         </div>
         <hr>
       <%}%>  
-    </div> 
+    
       
   </div>
   

@@ -54,6 +54,13 @@ body{
 
 /* End of Header */
 /* BODY HOME */
+.addThread{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 60%;
+    padding: 15px;
+    border-radius: 10px;
+}
 .home {
     margin: 80px;
     z-index: 10;
@@ -61,7 +68,33 @@ body{
 .listOfthreads{
     width: 60%;
 }
+.listOfRecent{
+    border: 1px solid black;
+/* padding: 55px; */
+    height: 1000px;
+    width: 300px;
+    position: absolute;
+    background-color: white;
+    top: 250px;
+    right: 70px;
+    border: none;
+    overflow: hidden;
+    margin-bottom: -50px;
+}
 /* End of Body Home */
+
+
+
+/* Top Posts */
+.allTopPost{
+    margin-top: 20px;
+}
+/* End of Top Posts */
+/* Recent Posts */
+.allRecentPost{
+    margin-top: 20px;
+}
+/* End of Recent Posts */
 .clear { clear:both}
 /* SIGN UP AND LOGIN */
 .modal {
