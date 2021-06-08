@@ -16,16 +16,60 @@ generateCode = () => {
 exports.index = async (req,res) => {
     res.locals.user = req.session.user;
     let thread_data = await threads.model.findAll();
-    res.render("home", {check : 0 , threadlist : thread_data});
+    let thread_owner = [];
+    let x = 0;
+    for(; x<thread_data.length; x++){
+        thread_owner[x] = await account.model.findOne({
+            where : {
+                uuid : thread_data[x].threaduuid
+            }
+        });
+    }
+    res.render("home", {check : 0 , threadlist : thread_data, threadOwner : thread_owner});
 }
 exports.home = async (req,res) => {
     res.locals.user = req.session.user;
     let thread_data = await threads.model.findAll();
+    let thread_owner = [];
+    let x = 0;
+    for(; x<thread_data.length; x++){
+        thread_owner[x] = await account.model.findOne({
+            where : {
+                uuid : thread_data[x].threaduuid
+            }
+        });
+    }
     if(req.session.user.uuid === req.session.threaduuid){
         res.sent("hellow");
     }
-    res.render("home", {check : 1 , threadlist : thread_data});
+    //res.send(thread_owner);
+    res.render("home", {check : 1 , threadlist : thread_data, threadOwner : thread_owner});
 }
+
+// ADMIN DELETE
+exports.deleteAccount = async (req, res) => {
+    res.locals.user = req.session.user;
+    let data = await account.model.destroy({
+        where : {uuid:req.query.uuid}
+    })
+    res.redirect("back");
+}
+exports.updateAccount = async (req, res) => {
+    res.locals.user = req.session.user;
+    await account.model.update({
+        uuid : req.session.user.uuid,
+    },req.body,
+    {new: true},
+    ).exec();
+    req.flash('success', 'Successfully updated');
+    res.redirect('/home');
+}
+
+// END OF ADMIN
+
+
+
+
 
 exports.getslogin = (req,res) => {
     res.render("login", {check : 0});

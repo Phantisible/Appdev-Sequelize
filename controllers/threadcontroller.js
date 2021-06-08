@@ -28,7 +28,14 @@ exports.addThread = async (req, res) => {
     res.redirect("/home");
     
 }
-
+exports.deleteThread = async (req, res) => {
+    res.locals.user = req.session.user;
+    let data = await threads.model.destroy({
+        where : {threadId:req.query.uuid,
+            threaduuid: req.session.user.uuid
+        }
+    })
+}
 exports.updateThread = async (req, res) => {
     res.locals.user = req.session.user;
     await threads.model.update({
